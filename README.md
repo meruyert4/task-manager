@@ -44,7 +44,16 @@ npm install
 3. Configure Firebase
    - Create a Firebase project at [Firebase Console](https://console.firebase.google.com/)
    - Enable Firestore Database
-   - Update Firebase configuration in `src/firebase.js`
+   - Create a `.env` file in the root directory with your Firebase configuration:
+   ```
+   REACT_APP_FIREBASE_API_KEY=your_api_key_here
+   REACT_APP_FIREBASE_AUTH_DOMAIN=your_project_id.firebaseapp.com
+   REACT_APP_FIREBASE_PROJECT_ID=your_project_id
+   REACT_APP_FIREBASE_STORAGE_BUCKET=your_project_id.firebasestorage.app
+   REACT_APP_FIREBASE_MESSAGING_SENDER_ID=your_messaging_sender_id
+   REACT_APP_FIREBASE_APP_ID=your_app_id
+   REACT_APP_FIREBASE_MEASUREMENT_ID=your_measurement_id
+   ```
 
 4. Start the application
 ```bash
@@ -81,10 +90,3 @@ task-manager/
 ## Available Scripts
 
 - `npm start` - Start development server
-- `npm build` - Build for production
-- `npm test` - Run tests
-
-## License
-
-This project is licensed under the MIT License.
-# task-manager

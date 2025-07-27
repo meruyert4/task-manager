@@ -1,0 +1,248 @@
+/* Task List Component Styles */
+/* This file contains all styling for the task display and management interface */
+
+/* Main task list container - white card with shadow and border */
+.task-list {
+  background-color: white;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  border: 1px solid #e2e8f0;
+}
+
+/* List title styling with decorative underline */
+.list-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  color: #1e293b;
+  position: relative;
+  padding-bottom: 0.75rem;
+}
+
+/* Decorative underline for list title */
+.list-title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 40px;
+  height: 3px;
+  background-color: #6366f1;
+  border-radius: 3px;
+}
+
+/* Container styles for loading, error, and empty states */
+.loading-container,
+.error-container,
+.empty-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 200px;
+  padding: 2rem;
+}
+
+/* Loading text styling */
+.loading-text {
+  font-size: 1rem;
+  color: #64748b;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* Error text styling */
+.error-text {
+  font-size: 0.9375rem;
+  color: #b91c1c;
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+/* Retry button styling */
+.retry-button {
+  background-color: #6366f1;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  font-size: 0.9375rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* Hover state for retry button */
+.retry-button:hover {
+  background-color: #4f46e5;
+  transform: translateY(-1px);
+}
+
+/* Empty state container - centered column layout */
+.empty-container {
+  flex-direction: column;
+  text-align: center;
+}
+
+/* Empty state primary text */
+.empty-text {
+  font-size: 1rem;
+  color: #64748b;
+  margin-bottom: 0.5rem;
+}
+
+/* Empty state secondary text */
+.empty-subtext {
+  font-size: 0.875rem;
+  color: #94a3b8;
+}
+
+/* Task grid container */
+.tasks-container {
+  display: grid;
+  gap: 1rem;
+}
+
+/* Individual task card styling */
+.task-card {
+  background-color: white;
+  border-radius: 10px;
+  padding: 1.25rem;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+  border: 1px solid #e2e8f0;
+  transition: all 0.2s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Hover effects for task cards */
+.task-card:hover {
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  transform: translateY(-2px);
+}
+
+/* Status indicator bar on the left side of task cards */
+.task-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background-color: #e2e8f0;
+}
+
+/* Status-specific colors for the indicator bar */
+.task-card.todo::before { background-color: #94a3b8; }
+.task-card.in-progress::before { background-color: #60a5fa; }
+.task-card.done::before { background-color: #4ade80; }
+
+/* Task header layout - title and status side by side */
+.task-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 0.75rem;
+  gap: 1rem;
+}
+
+/* Task title styling */
+.task-title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #1e293b;
+  margin: 0;
+  flex: 1;
+}
+
+/* Task status select dropdown styling */
+.task-status-select {
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border: none;
+  color: white;
+  cursor: pointer;
+  appearance: none; /* Remove default browser styling */
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6,9 12,15 18,9'%3e%3c/polyline%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right 0.5rem center;
+  background-size: 0.75em;
+  padding-right: 1.5rem;
+  min-width: 100px;
+  transition: all 0.2s ease;
+}
+
+/* Focus state for task status select */
+.task-status-select:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.5);
+}
+
+/* Hover state for task status select */
+.task-status-select:hover {
+  opacity: 0.9;
+}
+
+/* Task description styling */
+.task-description {
+  font-size: 0.875rem;
+  color: #64748b;
+  line-height: 1.6;
+  margin-bottom: 0.75rem;
+}
+
+/* Task metadata section - creation info and creator */
+.task-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.75rem;
+  color: #94a3b8;
+  padding-top: 0.75rem;
+  border-top: 1px solid #f1f5f9;
+}
+
+/* Individual metadata text styling */
+.meta-text {
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+/* Loading overlay for background operations */
+.loading-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(255, 255, 255, 0.9);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  backdrop-filter: blur(2px);
+}
+
+/* Loading overlay text styling */
+.loading-overlay p {
+  background-color: #1e293b;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}

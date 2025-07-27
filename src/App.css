@@ -1,0 +1,58 @@
+/* Main application styles - Global layout and container styling */
+
+/* Root app container - Full viewport height with background color */
+.app {
+  min-height: 100vh;
+  background-color: #f8fafc;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', sans-serif;
+}
+
+/* Main content container - Centers content and sets up flex layout */
+.content {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 2rem;
+  display: flex;
+  gap: 2rem;
+  height: 80vh; /* Fixed height for equal section sizing */
+}
+
+/* Container styles for both Add Task and Task List sections */
+/* Each section takes equal width (50%) and full height */
+.add-task-container, .task-list-container {
+  flex: 1 1 0; /* Equal flex basis for 50% width each */
+  min-width: 0; /* Allows proper shrinking */
+  height: 100%; /* Full height of parent */
+  display: flex;
+  flex-direction: column;
+}
+
+/* Responsive design - Stack sections vertically on mobile */
+@media (max-width: 900px) {
+  .content {
+    flex-direction: column; /* Stack vertically on small screens */
+    height: auto; /* Allow natural height on mobile */
+  }
+  .add-task-container, .task-list-container {
+    height: auto; /* Natural height on mobile */
+  }
+}
+
+/* Add Task Form styling - White card with shadow and border */
+.add-task-form {
+  padding: 1.5rem;
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  border: 1px solid #e2e8f0;
+}
+
+/* Task List styling - White card with shadow and border */
+.task-list {
+  background-color: white;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  border: 1px solid #e2e8f0;
+  min-height: 100vh; /* Ensure minimum height for content */
+}

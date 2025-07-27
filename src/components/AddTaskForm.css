@@ -1,0 +1,170 @@
+/* Add Task Form Component Styles */
+/* This file contains all styling for the task creation form */
+
+/* Main form container - white card with shadow and border */
+.add-task-form {
+  padding: 1.5rem;
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  border: 1px solid #e2e8f0;
+  height: fit-content;
+  position: sticky;
+  top: 1rem;
+}
+
+/* Form title styling with decorative underline */
+.form-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  color: #1e293b;
+  position: relative;
+  padding-bottom: 0.75rem;
+}
+
+/* Decorative underline for form title */
+.form-title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 40px;
+  height: 3px;
+  background-color: #6366f1;
+  border-radius: 3px;
+}
+
+/* Common styles for form inputs and textarea */
+.form-input,
+.form-textarea {
+  width: 100%;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 0.75rem 1rem;
+  margin-bottom: 1rem;
+  background-color: white;
+  font-size: 0.9375rem;
+  transition: all 0.2s ease;
+}
+
+/* Focus states for form inputs */
+.form-input:focus,
+.form-textarea:focus {
+  outline: none;
+  border-color: #6366f1;
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+}
+
+/* Textarea specific styling */
+.form-textarea {
+  min-height: 100px;
+  resize: vertical; /* Allow vertical resizing only */
+}
+
+/* Status selection container */
+.status-container {
+  margin-bottom: 1.5rem;
+}
+
+/* Status label styling */
+.status-label {
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+  color: #475569;
+}
+
+/* Native select element styling with custom dropdown arrow */
+.status-select {
+  width: 100%;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 0.75rem 1rem;
+  background-color: white;
+  font-size: 0.9375rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  appearance: none; /* Remove default browser styling */
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6,9 12,15 18,9'%3e%3c/polyline%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+  background-size: 1em;
+}
+
+/* Focus state for status select */
+.status-select:focus {
+  outline: none;
+  border-color: #6366f1;
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+}
+
+/* Hover state for status select */
+.status-select:hover {
+  border-color: #c7d2fe;
+}
+
+/* Submit button styling */
+.submit-button {
+  width: 100%;
+  padding: 0.75rem;
+  background-color: #6366f1;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.9375rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+/* Hover state for submit button */
+.submit-button:hover:not(:disabled) {
+  background-color: #4f46e5;
+  transform: translateY(-1px);
+}
+
+/* Disabled state for submit button */
+.submit-button:disabled {
+  background-color: #cbd5e1;
+  cursor: not-allowed;
+}
+
+/* Error message container styling */
+.error-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #fee2e2;
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  border-left: 4px solid #ef4444;
+}
+
+/* Error text styling */
+.error-text {
+  color: #b91c1c;
+  font-size: 0.875rem;
+}
+
+/* Clear error button styling */
+.clear-error-btn {
+  background: none;
+  border: none;
+  color: #b91c1c;
+  font-size: 1rem;
+  cursor: pointer;
+  padding: 0.25rem;
+  border-radius: 4px;
+}
+
+/* Hover state for clear error button */
+.clear-error-btn:hover {
+  background-color: rgba(239, 68, 68, 0.1);
+}
